@@ -31,3 +31,5 @@ SOURCES += \
 HEADERS += \
     spacescene.h \
     game.h
+
+FORMS +=

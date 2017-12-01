@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <QGraphicsView>
 #include <QString>
+#include <QLabel>
 #include "spacescene.h"
 
 class Game : public QWidget
@@ -15,16 +16,20 @@ class Game : public QWidget
 Q_OBJECT
 public:
     explicit Game();
+    void makeMainMenu();
 
 public slots:
     void initGame();
     void exitGame();
 
 private:
-    QButtonGroup *menu;
+    static const int gameWidth;
+    static const int gameHeight;
+    QWidget *mainMenu;
     SpaceScene *scene;
     QTimer *timer;
     QGraphicsView *view;
+
 
 };
 
