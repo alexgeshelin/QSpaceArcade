@@ -24,12 +24,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
+    game.cpp \
+    main.cpp \
     spacescene.cpp \
-    game.cpp
+    spaceship.cpp
 
 HEADERS += \
     spacescene.h \
-    game.h
+    game.h \
+    spaceship.h
 
 FORMS +=
+
+DISTFILES += \
+    resources/spaceship.png

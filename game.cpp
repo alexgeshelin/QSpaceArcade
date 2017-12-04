@@ -6,16 +6,21 @@ const int Game::gameHeight = 500;
 Game::Game()
 {
     this->setFixedSize(gameWidth, gameHeight);
-    QLabel *title = new QLabel(QString("QSpaceArcade"), this);
-    title->setStyleSheet(QString("QLabel { font-size: 34pt; }"));
-    title->setGeometry(\
-    gameWidth / 5, (gameHeight / 10), (gameWidth / 5) * 3, gameHeight / 5);
-    title->setAlignment(Qt::AlignCenter);
+    makeTitle();
     makeMainMenu();
     scene = 0;
     timer = 0;
 }
 
+void Game::makeTitle() {
+    QLabel *title = new QLabel(QString("QSpaceArcade"), this);
+    title->setStyleSheet(QString("QLabel { font-size: 34pt; }"));
+
+    title->setGeometry(\
+    gameWidth / 5, (gameHeight / 10), (gameWidth / 5) * 3, gameHeight / 5);
+
+    title->setAlignment(Qt::AlignCenter);
+}
 
 void Game::makeMainMenu() {
     mainMenu = new QWidget(this);
@@ -37,10 +42,16 @@ void Game::makeMainMenu() {
 void Game::initGame() {
 
     scene = new SpaceScene();
-    scene->setSceneRect(0, 0, 400, 500);
+    scene->setSceneRect(0, 0, gameWidth, gameHeight);
+    scene->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
+    Spaceship *spaceship = new Spaceship();
+    scene->addItem(spaceship);
     view = new QGraphicsView(scene, this);
-    scene->addRect(100, 100, 50, 50);
     view->show();
+}
+
+void Game::updateGame() {
+
 }
 
 void Game::exitGame() {
