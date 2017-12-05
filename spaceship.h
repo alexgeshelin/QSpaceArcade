@@ -3,12 +3,15 @@
 
 #include <QGraphicsPixmapItem>
 #include <QDir>
+#include <QKeyEvent>
 
 class Spaceship : public QGraphicsPixmapItem
 {
 public:
     Spaceship();
-    void takeDamage();
+    //void takeDamage();
+    virtual void keyPressEvent(QKeyEvent *event);
+    //void move();
 
 private:
     float x;

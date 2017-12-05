@@ -46,6 +46,7 @@ void Game::initGame() {
     scene->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
     Spaceship *spaceship = new Spaceship();
     scene->addItem(spaceship);
+    spaceship->grabKeyboard();
     view = new QGraphicsView(scene, this);
     view->show();
 }
