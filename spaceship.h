@@ -3,7 +3,6 @@
 
 #include <game.h>
 #include <QGraphicsPixmapItem>
-#include <QDir>
 #include <QKeyEvent>
 
 class Spaceship : public QGraphicsPixmapItem

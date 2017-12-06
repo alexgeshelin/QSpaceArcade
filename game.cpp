@@ -49,12 +49,15 @@ void Game::initGame() {
     scene->addItem(spaceship);
     spaceship->grabKeyboard();
 
+    Asteroid *asteroid = new Asteroid(100, -100);
+    scene->addItem(asteroid);
+
     view = new QGraphicsView(scene, this);
     view->show();
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateGame()));
-    timer->start(1000 /  30);
+    timer->start(1000 /  60);
 }
 
 void Game::updateGame() {

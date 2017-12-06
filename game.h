@@ -12,6 +12,7 @@
 #include <QBrush>
 #include "spaceship.h"
 #include "spacescene.h"
+#include "asteroid.h"
 
 class Game : public QWidget
 {

@@ -39,40 +39,32 @@ void Spaceship::keyReleaseEvent(QKeyEvent *event) {
 
 void Spaceship::advance(int phase) {
     if (phase) {
-        if (directionRight && !directionLeft && !(directionDown ^ directionUp))
-        {
+        if (directionRight && !directionLeft && !(directionDown ^ directionUp)) {
             x += 1;
         }
-        else if (directionUp && !directionDown && !(directionRight ^ directionLeft))
-        {
+        else if (directionUp && !directionDown && !(directionRight ^ directionLeft)) {
             y -= 1;
         }
 
-        else if (directionDown && !directionUp && !(directionRight ^ directionLeft))
-        {
+        else if (directionDown && !directionUp && !(directionRight ^ directionLeft)) {
             y += 1;
         }
-        else if (directionLeft && !directionRight && !(directionDown ^ directionUp))
-        {
+        else if (directionLeft && !directionRight && !(directionDown ^ directionUp)) {
             x -= 1;
         }
-        else if (directionUp && directionRight && !directionLeft && !directionDown)
-        {
+        else if (directionUp && directionRight && !directionLeft && !directionDown) {
             y -= 0.7071;
             x += 0.7071;
         }
-        else if (directionDown && directionRight && !directionLeft && !directionUp)
-        {
+        else if (directionDown && directionRight && !directionLeft && !directionUp) {
             y += 0.7071;
             x += 0.7071;
         }
-        else if (directionDown && directionLeft && !directionRight && !directionUp)
-        {
+        else if (directionDown && directionLeft && !directionRight && !directionUp) {
             y += 0.7071;
             x -= 0.7071;
         }
-        else if (directionUp && directionLeft && !directionRight && !directionDown)
-        {
+        else if (directionUp && directionLeft && !directionRight && !directionDown)  {
             y -= 0.7071;
             x -= 0.7071;
         }
