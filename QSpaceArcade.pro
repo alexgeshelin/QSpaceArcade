@@ -37,4 +37,8 @@ HEADERS += \
 FORMS +=
 
 DISTFILES += \
+    resources/spaceship.png \
     resources/spaceship.png
+
+RESOURCES += \
+    resources.qrc

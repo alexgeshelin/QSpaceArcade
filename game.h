@@ -20,6 +20,8 @@ public:
     explicit Game();
     void makeTitle();
     void makeMainMenu();
+    static const int gameWidth;
+    static const int gameHeight;
 
 public slots:
     void initGame();
@@ -27,13 +29,10 @@ public slots:
     void exitGame();
 
 private:
-    static const int gameWidth;
-    static const int gameHeight;
     QWidget *mainMenu;
     SpaceScene *scene;
     QTimer *timer;
     QGraphicsView *view;
-
 
 };
 
