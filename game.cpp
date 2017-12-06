@@ -42,17 +42,26 @@ void Game::makeMainMenu() {
 void Game::initGame() {
 
     scene = new SpaceScene();
-    scene->setSceneRect(0, 0, gameWidth, gameHeight);
+    scene->setSceneRect(0, 0 , gameWidth, gameHeight);
     scene->setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
+
     Spaceship *spaceship = new Spaceship();
     scene->addItem(spaceship);
     spaceship->grabKeyboard();
+
+    Asteroid *asteroid = new Asteroid(100, -100);
+    scene->addItem(asteroid);
+
     view = new QGraphicsView(scene, this);
     view->show();
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(updateGame()));
+    timer->start(1000 /  60);
 }
 
 void Game::updateGame() {
-
+    scene->advance();
 }
 
 void Game::exitGame() {
