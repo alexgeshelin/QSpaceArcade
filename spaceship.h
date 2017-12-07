@@ -1,24 +1,25 @@
 #ifndef SPACESHIP_H
 #define SPACESHIP_H
 
-#include <game.h>
+#include "game.h"
+#include "spaceitem.h"
 #include <QGraphicsPixmapItem>
 #include <QKeyEvent>
 
-class Spaceship : public QGraphicsPixmapItem
+class Spaceship : public SpaceItem
 {
 public:
     Spaceship();
-    //void takeDamage();
+    virtual ~Spaceship();
     virtual void keyPressEvent(QKeyEvent *event);
     virtual void keyReleaseEvent(QKeyEvent *event);
-    //void move();
     virtual void advance(int phase);
-    void checkBounds();
+    virtual void checkBounds();
 
 private:
-    float x;
-    float y;
+	Spaceship(Spaceship const &spaceship);
+	Spaceship & operator=(Spaceship const &spaceship);
+	
     bool directionUp;
     bool directionDown;
     bool directionLeft;

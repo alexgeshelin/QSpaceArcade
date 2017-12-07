@@ -3,19 +3,21 @@
 
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
+#include "spaceitem.h"
 #include "game.h"
 
 class Asteroid : public QGraphicsPixmapItem
 {
-
 public:
     Asteroid(float x, float y);
+    virtual ~Asteroid();
     virtual void advance(int phase);
+    virtual void checkBounds();
 
 private:
     Asteroid();
-    float x;
-    float y;
+    Asteroid(Asteroid const &asteroid);
+    Asteroid & operator=(Asteroid const &asteroid);
 
 };
 
