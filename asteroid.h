@@ -6,7 +6,7 @@
 #include "spaceitem.h"
 #include "game.h"
 
-class Asteroid : public QGraphicsPixmapItem
+class Asteroid : public SpaceItem
 {
 public:
     Asteroid(float x, float y);

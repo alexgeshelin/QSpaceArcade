@@ -28,13 +28,15 @@ SOURCES += \
     main.cpp \
     spacescene.cpp \
     spaceship.cpp \
-    asteroid.cpp
+    asteroid.cpp \
+    spaceitem.cpp
 
 HEADERS += \
     spacescene.h \
     game.h \
     spaceship.h \
-    asteroid.h
+    asteroid.h \
+    spaceitem.h
 
 FORMS +=
 

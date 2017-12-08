@@ -1,7 +1,7 @@
 #include "spaceship.h"
 
 Spaceship::Spaceship() :
-    SpaceItem(QPixmap(QString(":/resources/spaceship.png"), 240, 450))
+    SpaceItem(QPixmap(QString(":/resources/spaceship.png")), 240, 450)
 {
     setShapeMode(QGraphicsPixmapItem::MaskShape);
     setScale(0.5);
@@ -78,6 +78,10 @@ void Spaceship::advance(int phase) {
         checkBounds();
         setPos(x, y);
     }
+}
+
+void Spaceship::takeDamage(int damage) {
+
 }
 
 void Spaceship::checkBounds() {

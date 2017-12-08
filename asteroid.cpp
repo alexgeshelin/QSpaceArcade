@@ -5,7 +5,7 @@ Asteroid::Asteroid(float x, float y) :
 {
     setShapeMode(QGraphicsPixmapItem::MaskShape);
     setScale(0.25);
-    setHealth(10);
+    setHP(10);
     setAttack(20);
     setSpeed(1);
 }

@@ -29,11 +29,11 @@ void SpaceItem::setHP(int hp) {
 }
 
 void SpaceItem::setAttack(int attack) {
-	attack = attack;
+    this->attack = attack;
 }
 
 void SpaceItem::setSpeed(float speed) {
-	speed = speed;
+    this->speed = speed;
 }
 
 int SpaceItem::getHP() const {

@@ -2,6 +2,7 @@
 #define SPACEITEM_H
 
 #include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
 
 class SpaceItem : public QGraphicsPixmapItem 
 {
@@ -21,10 +22,11 @@ public:
 
 protected:
 	float x;
-	float y;
+    float y;
+    SpaceItem();
 
 private:
-	SpaceItem();
+
 	SpaceItem(SpaceItem const &spaceitem);
 	SpaceItem &operator=(SpaceItem const &spaceitem);
 
