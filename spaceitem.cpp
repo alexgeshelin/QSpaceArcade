@@ -60,4 +60,6 @@ SpaceItem::SpaceItem() {}
 
 SpaceItem::SpaceItem(SpaceItem const &spaceitem) {}
 
-SpaceItem &SpaceItem::operator=(SpaceItem const &spaceitem) {}
+SpaceItem &SpaceItem::operator=(SpaceItem const &spaceitem) {
+    return (*this);
+}

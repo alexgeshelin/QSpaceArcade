@@ -9,6 +9,8 @@
 #include <ctime>
 #include <cstdlib>
 
+class Spaceship;
+
 class SpaceScene : public QGraphicsScene {
 Q_OBJECT
 public:
@@ -30,6 +32,7 @@ private:
 
 	void handleCollisions();
 
+    Spaceship *spaceship;
 	QTimer *globalTimer;
 	QTimer *enemyGenTimer;
 	QTimer *difficultyTimer;

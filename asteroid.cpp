@@ -4,7 +4,7 @@ Asteroid::Asteroid(float x, float y) :
     SpaceItem(QPixmap(QString(":/resources/asteroid.png")), x, y)
 {
     setShapeMode(QGraphicsPixmapItem::MaskShape);
-    setScale(0.25);
+    setScale(0.3);
     setHP(10);
     setAttack(20);
     setSpeed(1);
@@ -30,4 +30,6 @@ Asteroid::Asteroid() {}
 
 Asteroid::~Asteroid () {}
 
-Asteroid & Asteroid::operator=(Asteroid const &asteroid) {}
+Asteroid & Asteroid::operator=(Asteroid const &asteroid) {
+    return (*this);
+}

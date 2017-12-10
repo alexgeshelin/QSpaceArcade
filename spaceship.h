@@ -6,9 +6,8 @@
 #include <QGraphicsPixmapItem>
 #include <QKeyEvent>
 
-class Spaceship : public QObject, public SpaceItem
+class Spaceship : public SpaceItem
 {
-    Q_OBJECT
 public:
     explicit Spaceship();
     virtual ~Spaceship();

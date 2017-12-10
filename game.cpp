@@ -7,13 +7,13 @@ Game::Game()
 {
     setFixedSize(gameWidth, gameHeight);
     scene = new SpaceScene(gameWidth, gameHeight, this);
-    makeTitle();
     makeMainMenu();
+    makeTitle();
 }
 
 void Game::makeTitle() {
-    QLabel *title = new QLabel(QString("QSpaceArcade"), this);
-    title->setStyleSheet(QString("QLabel { font-size: 34pt; }"));
+    QLabel *title = new QLabel(QString("QSpaceArcade"), mainMenu);
+    title->setStyleSheet(QString("QLabel { font-size: 34pt; color: white; }"));
 
     title->setGeometry(\
     (gameWidth / 5), (gameHeight / 10), (gameWidth / 5) * 3, (gameHeight / 5));
@@ -33,8 +33,12 @@ void Game::makeMainMenu() {
     exit->setGeometry(
     (gameWidth / 3), (gameHeight / 10) * 5 , (gameWidth / 3), (gameHeight / 10));
 
-    QObject::connect(play, SIGNAL (pressed()), scene, SLOT (startGame()));
-    QObject::connect(exit, SIGNAL (pressed()), this, SLOT (exitGame()));
+    QObject::connect(play, SIGNAL (pressed()),
+                     scene, SLOT (startGame()));
+    QObject::connect(play, SIGNAL (pressed()),
+                     mainMenu, SLOT (hide()));
+    QObject::connect(exit, SIGNAL (pressed()),
+                     this, SLOT (exitGame()));
 }
 
 void Game::exitGame() {
@@ -45,4 +49,6 @@ Game::~Game() {}
 
 Game::Game(Game const &game) {}
 
-Game & Game::operator=(Game const &game) {}
+Game & Game::operator=(Game const &game) {
+    return (*this);
+}

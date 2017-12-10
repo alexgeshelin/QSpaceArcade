@@ -15,6 +15,8 @@ Spaceship::Spaceship() :
     directionUp = false;
 }
 
+Spaceship::~Spaceship() {}
+
 void Spaceship::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Up || event->key() == Qt::Key_W)
         directionUp = true;
@@ -81,7 +83,9 @@ void Spaceship::advance(int phase) {
 }
 
 void Spaceship::takeDamage(int damage) {
-
+    SpaceItem::takeDamage(damage);
+    if (getHP() <= 0)
+        QApplication::instance()->exit(0);
 }
 
 void Spaceship::checkBounds() {
@@ -93,4 +97,10 @@ void Spaceship::checkBounds() {
         y = Game::gameHeight - 40;
     if (y < 0)
         y = 0;
+}
+
+Spaceship::Spaceship(Spaceship const &spaceship) {}
+
+Spaceship & Spaceship::operator=(Spaceship const &spaceship) {
+    return (*this);
 }
