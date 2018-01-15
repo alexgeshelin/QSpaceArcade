@@ -3,5 +3,6 @@
         <file>resources/spaceship.png</file>
         <file>resources/asteroid.png</file>
         <file>resources/background.png</file>
+        <file>resources/laser.png</file>
     </qresource>
 </RCC>

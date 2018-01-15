@@ -26,6 +26,8 @@ void Spaceship::keyPressEvent(QKeyEvent *event) {
         directionRight = true;
     if (event->key() == Qt::Key_Left || event->key() == Qt::Key_A)
         directionLeft = true;
+    if (event->key() == Qt::Key_Space)
+        static_cast<SpaceScene*>(scene())->startShooting();
 }
 
 void Spaceship::keyReleaseEvent(QKeyEvent *event) {
@@ -37,6 +39,8 @@ void Spaceship::keyReleaseEvent(QKeyEvent *event) {
         directionRight = false;
     if (event->key() == Qt::Key_Left || event->key() == Qt::Key_A)
         directionLeft = false;
+    if (event->key() == Qt::Key_Space)
+    static_cast<SpaceScene*>(scene())->stopShooting();
 }
 
 void Spaceship::advance(int phase) {
