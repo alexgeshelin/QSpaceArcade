@@ -88,16 +88,16 @@ void SpaceScene::spaceshipCollisions() {
 }
 
 void SpaceScene::laserCollisions() {
-    if (!lasers.isEmpty())
-    {
-        QList<Laser*>::iterator ilasers;
-        ilasers = lasers.begin();
-        for ( ; ilasers != items.end(); ilasers++) {
-            QList<QGraphicsItem*> items;
-            QList<QGraphicsItem*>::iterator i;
-            i =
-        }
-    }
+//    if (!lasers.isEmpty())
+//    {
+//        QList<Laser*>::iterator ilasers;
+//        ilasers = lasers.begin();
+//        for ( ; ilasers != items.end(); ilasers++) {
+//            QList<QGraphicsItem*> items;
+//            QList<QGraphicsItem*>::iterator i;
+//            i =
+//        }
+//    }
 }
 
 void SpaceScene::addLaser() {
